@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="pointA" class="com.pvn.Point" scope="prototype">
+		<property name="pointX" value="0" />
+		<property name="pointY" value="0" />
+	</bean>
+	
+	<bean id="pointB" class="com.pvn.Point">
+		<property name="pointX" value="10" />
+		<property name="pointY" value="-10" />
+	</bean>
+	
+	<bean id="pointC" class="com.pvn.Point">
+		<property name="pointX" value="20" />
+		<property name="pointY" value="-20" />
+	</bean>
+	
+	<bean id="triangle" class="com.pvn.Triangle">
+		<property name="pointA" ref="pointA" />
+		<property name="pointB" ref="pointB" />
+		<property name="pointC" ref="pointC" />
+	</bean>
+	
+	<bean id="circle" class="com.pvn.Circle">
+		<property name="center" ref="pointA" />
+	</bean>
+	
+	
+
+</beans>

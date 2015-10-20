@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<aop:aspectj-autoproxy/>
+
+	<bean name="triangle" class="com.pvn.model.Triangle">
+		<property name="name" value="Right Angled Triangle"></property>
+	</bean>
+	<bean name="circle" class="com.pvn.model.Circle">
+		<property name="name" value="Semi Circle"></property>
+	</bean>
+	<bean name="shapeService"  class="com.pvn.service.ShapeService"  autowire="byName"/>
+	<bean name="aroundAdvice" class="com.pvn.aspect.AroundAdviceAspect"/>
+
+	<!-- aop-aspect advice xml configuration -->
+	
+	<aop:config>
+		<aop:aspect id="loggingAspect" ref="aroundAdvice">  
+		<!-- This Equivalent to @Aspect annotation  -->
+			<aop:pointcut  id="allGetters" expression="execution(public String get*())" />  
+			<!-- @Pointcut("execution(public String get*())") -->
+			<aop:around method="allAdvices" pointcut-ref="allGetters"/>
+			<!-- @Around("allGetters()") -->
+		</aop:aspect>
+	</aop:config>
+</beans>

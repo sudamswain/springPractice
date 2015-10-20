@@ -1,0 +1,4 @@
+@Qualifier("quailierIdentifier") ==> A bean can be qualified for wiring by using 
+<qualifier> tag with value="quailierIdentifier"
+@Resource = @Autowired(byName)
+@Component==@Controller==@Service==@Repository

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="pointA" class="com.pvn.Point" >
+        <constructor-arg name="" value="0" />
+        <constructor-arg name="pointY" value="-1" />
+    </bean>
+    <bean id="pointB" class="com.pvn.Point" >
+        <constructor-arg name="pointX" value="10" />
+        <constructor-arg name="pointY" value="9" />
+    </bean>
+    <bean id="pointC" class="com.pvn.Point" >
+        <constructor-arg name="pointX" value="15" />
+        <constructor-arg name="pointY" value="14" />
+    </bean>
+    
+    <bean id="triangle" class="com.pvn.Triangle">
+        <constructor-arg name="pointA" ref="pointA" />
+        <constructor-arg name="pointB" ref="pointB" />
+        <constructor-arg name="pointC" ref="pointC" />
+    </bean>
+</beans>
