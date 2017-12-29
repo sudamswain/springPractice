@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Drawing 
 {
 	public static void main(String[] args) {
+		System.out.println("sudam testing");
 //		AbstractApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
 		AbstractApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
 		Triangle triangle=(Triangle)context.getBean("triangle");
