@@ -8,6 +8,7 @@ public class Drawing
 {
 	public static void main(String[] args) {
 		System.out.println("sudam testing");
+		System.out.println("sudam testing2");
 //		AbstractApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
 		AbstractApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
 		Triangle triangle=(Triangle)context.getBean("triangle");
